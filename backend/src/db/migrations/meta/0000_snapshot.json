@@ -1,5 +1,5 @@
 {
-  "id": "554e10ff-da7a-4310-8781-87990caeaf7e",
+  "id": "f177c031-6139-4aea-b96f-d242527fb3ee",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -16,7 +16,7 @@
         },
         "user_id": {
           "name": "user_id",
-          "type": "text",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true
         },
@@ -46,7 +46,7 @@
         },
         "servings": {
           "name": "servings",
-          "type": "text",
+          "type": "integer",
           "primaryKey": false,
           "notNull": false
         },
