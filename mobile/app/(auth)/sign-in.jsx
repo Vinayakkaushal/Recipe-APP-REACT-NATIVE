@@ -49,6 +49,7 @@ const SignIn = () => {
     <View style={authStyles.container}>
      <KeyboardAvoidingView style ={authStyles.keyboardView}
       behavior={ Platform.OS==="ios" ? "padding" : "height"}
+      keyboardVerticalOffset={Platform.OS==="android" ?64 :0}
      > 
       <ScrollView
         contentContainerStyle ={authStyles.scrollContent}
@@ -99,8 +100,26 @@ const SignIn = () => {
 
                   </Ionicons>
                 </TouchableOpacity>
-              </View>
+              </View> 
+              <TouchableOpacity 
+                style={[authStyles.authButton , loading && authStyles.buttonDisabled]}
+                onPress={handleSignIn}
+                disabled={loading}
+                activeOpacity={0.8}
+              >
+                <Text style={authStyles.buttonText}>
+                  {loading ? "Signing in .." : "Sign in"}
+                </Text>
+              </TouchableOpacity>
 
+
+              <TouchableOpacity style={authStyles.linkContainer}
+                onPress={()=> router.push("/(auth)/sign-up")}
+              >
+                <Text style= {authStyles.linkText}>
+                  Don&apos;t have an account ? <Text style={authStyles.link}>Sign up</Text>
+                </Text>
+              </TouchableOpacity>
             </View>
 
           </View>
